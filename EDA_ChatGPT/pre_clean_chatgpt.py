@@ -6,7 +6,7 @@ Script to clean ChatGPT.csv by keeping only 'Date' and 'Tweet' columns.
 import pandas as pd
 import os
 
-def clean_chatgpt_csv():
+def pre_clean_chatgpt_csv():
     """Clean ChatGPT.csv by keeping only Date and Tweet columns."""
     
     print("🧹 Cleaning ChatGPT.csv...")
@@ -49,4 +49,4 @@ def clean_chatgpt_csv():
     print("\n🎉 ChatGPT.csv cleaning completed!")
 
 if __name__ == "__main__":
-    clean_chatgpt_csv()
+    pre_clean_chatgpt_csv()
