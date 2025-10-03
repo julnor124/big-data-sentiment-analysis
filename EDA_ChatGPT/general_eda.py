@@ -9,8 +9,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
-import warnings
-warnings.filterwarnings('ignore')
 
 def load_and_inspect_data():
     """Load and perform basic inspection of the ChatGPT dataset."""
@@ -21,10 +19,10 @@ def load_and_inspect_data():
     # Load the data
     print("\n📊 1. LOADING DATA...")
     try:
-        df = pd.read_csv('ChatGPT_clean.csv')
+        df = pd.read_csv('ChatGPT_pre_clean.csv')
         print(f"✅ Data loaded successfully!")
     except FileNotFoundError:
-        print("❌ File 'ChatGPT_clean.csv' not found!")
+        print("❌ File 'ChatGPT_pre_clean.csv' not found!")
         return None
     except Exception as e:
         print(f"❌ Error loading data: {e}")
@@ -38,17 +36,18 @@ def inspect_dataset_format(df):
     print("\n📏 2. DATASET FORMAT INSPECTION")
     print("-" * 40)
     
-    # Basic shape information
-    print(f"📐 Dataset Shape: {df.shape}")
-    print(f"   - Rows: {df.shape[0]:,}")
-    print(f"   - Columns: {df.shape[1]}")
+    # Basic shape information (show original structure)
+    original_df = pd.read_csv('ChatGPT_pre_clean.csv')
+    print(f"📐 Dataset Shape: {original_df.shape}")
+    print(f"   - Rows: {original_df.shape[0]:,}")
+    print(f"   - Columns: {original_df.shape[1]}")
     
     # Memory usage
-    memory_usage = df.memory_usage(deep=True).sum() / 1024**2  # MB
+    memory_usage = original_df.memory_usage(deep=True).sum() / 1024**2  # MB
     print(f"💾 Memory Usage: {memory_usage:.2f} MB")
     
     # Column names
-    print(f"📋 Column Names: {list(df.columns)}")
+    print(f"📋 Column Names: {list(original_df.columns)}")
     
     # First few rows
     print(f"\n👀 First 3 rows:")
@@ -316,8 +315,8 @@ def create_visualizations(df):
     axes[1, 1].set_ylabel('Tweet Length (characters)')
     
     plt.tight_layout()
-    plt.savefig('chatgpt_eda_visualizations.png', dpi=300, bbox_inches='tight')
-    print("✅ Visualizations saved as 'chatgpt_eda_visualizations.png'")
+    plt.savefig('chatgpt_general_eda_visualizations.png', dpi=300, bbox_inches='tight')
+    print("✅ Visualizations saved as 'chatgpt_general_eda_visualizations.png'")
     
     return df
 
@@ -326,6 +325,9 @@ def generate_summary_report(df):
     
     print("\n📋 9. SUMMARY REPORT")
     print("=" * 60)
+    
+    # Load original dataset to show correct structure
+    original_df = pd.read_csv('ChatGPT_pre_clean.csv')
     
     print(f"📊 Dataset Overview:")
     print(f"   - Total tweets: {len(df):,}")
@@ -370,6 +372,9 @@ def save_eda_report_to_file(df):
     print("\n📝 10. SAVING EDA REPORT TO FILE")
     print("-" * 40)
     
+    # Load original dataset to show correct structure
+    original_df = pd.read_csv('ChatGPT_pre_clean.csv')
+    
     # Prepare all the data for the report
     valid_dates = df['Date'].dropna()
     df_valid = df.dropna(subset=['Date']) if len(valid_dates) > 0 else df
@@ -402,15 +407,14 @@ def save_eda_report_to_file(df):
     report_content = f"""
 CHATGPT DATASET EXPLORATORY DATA ANALYSIS REPORT
 ================================================
-Generated on: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}
 
 1. DATASET FORMAT INSPECTION
 ============================
-Dataset Shape: {df.shape}
-- Rows: {df.shape[0]:,}
-- Columns: {df.shape[1]}
-Memory Usage: {df.memory_usage(deep=True).sum() / 1024**2:.2f} MB
-Column Names: {list(df.columns)}
+Dataset Shape: {original_df.shape}
+- Rows: {original_df.shape[0]:,}
+- Columns: {original_df.shape[1]}
+Memory Usage: {original_df.memory_usage(deep=True).sum() / 1024**2:.2f} MB
+Column Names: {list(original_df.columns)}
 
 2. DATA TYPES CHECK
 ===================
@@ -556,7 +560,7 @@ END OF REPORT
 """
     
     # Save to file
-    filename = 'chatgpt_eda_report.txt'
+    filename = 'chatgpt_general_eda_report.txt'
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(report_content)
     

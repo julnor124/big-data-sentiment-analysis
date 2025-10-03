@@ -10,8 +10,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import Counter
 import re
-import warnings
-warnings.filterwarnings('ignore')
 
 # Import additional libraries for text analysis
 try:
@@ -24,7 +22,6 @@ except ImportError:
 try:
     import nltk
     from nltk.corpus import stopwords
-    from nltk.tokenize import word_tokenize
     NLTK_AVAILABLE = True
 except ImportError:
     NLTK_AVAILABLE = False
@@ -43,12 +40,12 @@ def load_data():
     """Load the ChatGPT dataset."""
     print("📊 1. LOADING DATA...")
     try:
-        df = pd.read_csv('ChatGPT_clean.csv')
+        df = pd.read_csv('ChatGPT_pre_clean.csv')
         print(f"✅ Data loaded successfully!")
         print(f"   - Shape: {df.shape}")
         return df
     except FileNotFoundError:
-        print("❌ File 'ChatGPT_clean.csv' not found!")
+        print("❌ File 'ChatGPT_pre_clean.csv' not found!")
         return None
     except Exception as e:
         print(f"❌ Error loading data: {e}")
@@ -150,14 +147,14 @@ def language_detection(df):
         print("⚠️  Language detection skipped - TextBlob not available")
         return {}
     
-    # Sample tweets for language detection (to avoid long processing time)
-    sample_size = min(10000, len(df))
-    sample_df = df.sample(n=sample_size, random_state=42)
-    
-    print(f"🔍 Analyzing language for {sample_size:,} sample tweets...")
+    # Analyze ALL tweets for language detection
+    total_tweets = len(df)
+    print(f"🔍 Analyzing language for ALL {total_tweets:,} tweets...")
     
     languages = []
-    for tweet in sample_df['Tweet']:
+    for i, tweet in enumerate(df['Tweet']):
+        if i % 10000 == 0:
+            print(f"   Progress: {i:,}/{total_tweets:,} tweets processed...")
         try:
             blob = TextBlob(str(tweet))
             lang = blob.detect_language()
@@ -167,7 +164,7 @@ def language_detection(df):
     
     language_counts = Counter(languages)
     
-    print(f"\n📊 Language Distribution (Sample of {sample_size:,} tweets):")
+    print(f"\n📊 Language Distribution (ALL {total_tweets:,} tweets):")
     total_detected = sum(language_counts.values())
     for lang, count in language_counts.most_common(10):
         percentage = (count / total_detected) * 100
@@ -293,7 +290,6 @@ def save_text_analysis_report(df, freq_data, lang_data):
     report_content = f"""
 CHATGPT TWEET TEXT ANALYSIS REPORT
 ==================================
-Generated on: {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M:%S')}
 
 1. DATASET OVERVIEW
 ===================
@@ -339,7 +335,7 @@ Tweet Length Statistics:
     report_content += "====================\n"
     if lang_data:
         total_detected = sum(lang_data.values())
-        report_content += f"Languages detected in sample of {total_detected:,} tweets:\n"
+        report_content += f"Languages detected in ALL {total_detected:,} tweets:\n"
         for lang, count in Counter(lang_data).most_common(10):
             percentage = (count / total_detected) * 100
             report_content += f"{lang:<10} : {count:,} ({percentage:.1f}%)\n"
