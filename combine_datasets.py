@@ -5,9 +5,6 @@ Dataset Combination Script
 
 This script combines the cleaned ChatGPT and GenerativeAI datasets into a single file.
 It merges ChatGPT_cleaned.csv and GenerativeAI_cleaned.csv into AfterChatGPT.csv.
-
-Author: Generated for Big Data Sentiment Analysis Project
-Date: 2025-10-03
 """
 
 import pandas as pd
