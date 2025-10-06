@@ -1,0 +1,49 @@
+
+GENERATIVEAI DATASET CLEANING REPORT
+===================================
+
+CLEANING SUMMARY:
+- Original dataset: 22,064 rows
+- Cleaned dataset: 21,288 rows
+- Removed: 776 rows (3.52%)
+
+DETAILED CLEANING BREAKDOWN:
+- Missing dates: 0 rows (0.00%)
+- Duplicates: 0 rows (0.00%)
+- NaN values: 775 rows (3.51%)
+- Empty tweets: 1 rows (0.00%)
+
+MEMORY USAGE:
+- Original: 8.27 MB
+- Cleaned: 6.58 MB
+- Reduction: 1.69 MB (20.42%)
+
+TWEET LENGTH STATISTICS:
+Original Dataset:
+- Mean length: 228.2 characters
+- Median length: 250.0 characters
+- Min length: 21 characters
+- Max length: 741 characters
+
+Cleaned Dataset:
+- Mean length: 186.4 characters
+- Median length: 199.0 characters
+- Min length: 3 characters
+- Max length: 289 characters
+
+CLEANING STEPS APPLIED:
+1. ✅ Removed rows with missing dates
+2. ✅ Removed exact duplicates (same tweet and date/time)
+3. ✅ Handled tweets containing NaN values
+4. ✅ Removed stopwords (if NLTK available)
+5. ✅ Removed emojis, mentions, and hashtags
+6. ✅ Removed links and URLs
+7. ✅ Removed special characters
+8. ✅ Cleaned whitespace and lowercased
+
+DATASET QUALITY:
+- No missing dates: ✅
+- No duplicates: ✅
+- No NaN values: ✅
+- Text preprocessed: ✅
+

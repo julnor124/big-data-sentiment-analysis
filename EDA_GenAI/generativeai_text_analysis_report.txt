@@ -1,0 +1,123 @@
+
+GENERATIVEAI TWEET TEXT ANALYSIS REPORT
+======================================
+
+1. DATASET OVERVIEW
+===================
+Total tweets analyzed: 22,064
+Date range: 2023-01-02 to 2024-11-27
+
+2. RAW TWEET STRUCTURE ANALYSIS
+===============================
+Tweet Structure Patterns:
+- Tweets with hashtags: 7,628 (34.6%)
+- Tweets with mentions: 7,763 (35.2%)
+- Tweets with URLs: 14,023 (63.6%)
+- Retweets (RT @): 5 (0.0%)
+
+Tweet Length Statistics:
+- Mean length: 228.2 characters
+- Median length: 250.0 characters
+- Min length: 21.0 characters
+- Max length: 741.0 characters
+
+3. FREQUENCY ANALYSIS
+=====================
+
+Top 20 Most Common Words:
+ 1. generative           : 18,763
+ 2. future               : 3,322
+ 3. impact               : 2,931
+ 4. risks                : 2,928
+ 5. human                : 2,786
+ 6. opportunities        : 2,501
+ 7. generated            : 2,471
+ 8. new                  : 2,411
+ 9. amp                  : 2,320
+10. policy               : 2,310
+11. use                  : 2,234
+12. misinformation       : 2,160
+13. thought              : 1,952
+14. helps                : 1,875
+15. like                 : 1,815
+16. data                 : 1,737
+17. opinion              : 1,373
+18. learn                : 1,303
+19. using                : 1,207
+20. content              : 1,205
+
+Top 20 Most Common Hashtags:
+ 1. #AI                  : 3,605
+ 2. #GenerativeAI        : 1,351
+ 3. #GenAI               : 679
+ 4. #ChatGPT             : 342
+ 5. #Technology          : 274
+ 6. #LLM                 : 255
+ 7. #ai                  : 248
+ 8. #ArtificialIntelligence : 244
+ 9. #ML                  : 233
+10. #Data                : 226
+11. #Innovation          : 225
+12. #ConversationalAI    : 217
+13. #Cybersecurity       : 216
+14. #Chatbot             : 216
+15. #EmergingTech        : 206
+16. #Hallucination       : 206
+17. #DataPoisoning       : 206
+18. #Coruzant            : 206
+19. #Aporia              : 206
+20. #Cisco               : 190
+
+Top 20 Most Common Mentions:
+ 1. @elonmusk            : 161
+ 2. @AporiaAI            : 70
+ 3. @antgrasso           : 56
+ 4. @McKinsey            : 50
+ 5. @Azure               : 42
+ 6. @OpenAI              : 41
+ 7. @Microsoft           : 37
+ 8. @awscloud            : 33
+ 9. @Google              : 33
+10. @YouTube             : 30
+11. @LinkedIn            : 30
+12. @Oracle_ME           : 30
+13. @TheNationalNews     : 30
+14. @GaryMarcus          : 28
+15. @BetaMoroney         : 26
+16. @BBCWorld            : 25
+17. @nvidia              : 24
+18. @CommunityNotes      : 24
+19. @parmy               : 22
+20. @realDonaldTrump     : 21
+
+4. LANGUAGE DETECTION
+====================
+Languages detected in ALL 22,064 tweets:
+unknown    : 22,064 (100.0%)
+
+
+5. TWEET LENGTH DISTRIBUTION
+============================
+Very Short (0-50)    : 69 tweets (0.3%)
+Short (51-100)       : 1,081 tweets (4.9%)
+Medium (101-200)     : 5,270 tweets (23.9%)
+Long (201-280)       : 11,011 tweets (49.9%)
+Very Long (281+)     : 4,633 tweets (21.0%)
+
+Statistical Summary:
+- Mean: 228.2 characters
+- Median: 250.0 characters
+- Standard Deviation: 64.9
+- 25th Percentile: 187.0
+- 75th Percentile: 276.0
+
+6. KEY FINDINGS
+===============
+1. Most tweets contain hashtags and mentions, indicating active social media engagement
+2. Tweet lengths vary widely, with most being long length (201-280 characters)
+3. Common words and hashtags reveal the main topics of discussion around GenerativeAI
+4. Language detection shows the primary language of the dataset
+5. Retweet patterns indicate viral content and information sharing
+
+END OF REPORT
+=============
