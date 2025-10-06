@@ -1,0 +1,158 @@
+
+GENERATIVEAI DATASET EXPLORATORY DATA ANALYSIS REPORT
+====================================================
+
+1. DATASET FORMAT INSPECTION
+============================
+Dataset Shape: (22064, 2)
+- Rows: 22,064
+- Columns: 2
+Memory Usage: 7.91 MB
+Column Names: ['Date', 'Tweet']
+
+2. DATA TYPES CHECK
+===================
+Current Data Types:
+Date            datetime64[ns, UTC]
+Tweet           object
+
+Date Column Analysis:
+- Current type: datetime64[ns, UTC]
+- Total Date values: 22,064
+- Unique Date values: 22,063
+- Failed conversions: 0
+- Valid date range: 2023-01-02 16:51:00.075000+00:00 to 2024-11-27 15:00:01.454000+00:00
+
+Tweet Column Analysis:
+- Current type: object
+- All tweets converted to string successfully
+
+3. MISSING VALUES CHECK
+=======================
+Missing Values Summary:
+      Column  Missing Count  Missing Percentage
+        Date              0            0.000000
+       Tweet              0            0.000000
+
+Empty Tweet Strings: 0
+Whitespace-only Tweets: 0
+
+4. DUPLICATE TWEETS CHECK
+=========================
+Exact Duplicates: 0
+Duplicate Tweets: 429
+
+5. DATE DISTRIBUTION ANALYSIS
+=============================
+Date Range (valid dates only):
+- Earliest: 2023-01-02 16:51:00.075000+00:00
+- Latest: 2024-11-27 15:00:01.454000+00:00
+- Span: 694 days 22:09:01.379000
+- Valid dates: 22,064 out of 22,064
+
+Daily Tweet Statistics:
+- Average tweets per day: 32.5
+- Median tweets per day: 19.0
+- Max tweets per day: 268
+- Min tweets per day: 1
+
+Top 10 Most Active Days:
+- 2024-11-21: 268 tweets
+- 2024-11-22: 247 tweets
+- 2024-11-20: 231 tweets
+- 2024-11-25: 228 tweets
+- 2024-11-19: 217 tweets
+- 2024-05-21: 200 tweets
+- 2024-10-22: 176 tweets
+- 2024-11-26: 174 tweets
+- 2024-10-24: 156 tweets
+- 2024-10-14: 148 tweets
+
+Monthly Distribution:
+Date
+2023-01    58
+2023-02    53
+2023-03    122
+2023-04    160
+2023-05    230
+2023-06    209
+2023-07    246
+2023-08    251
+2023-09    346
+2023-10    504
+2023-11    610
+2023-12    442
+2024-01    746
+2024-02    758
+2024-03    959
+2024-04    869
+2024-05    1,452
+2024-06    1,466
+2024-07    1,580
+2024-08    1,924
+2024-09    2,699
+2024-10    3,128
+2024-11    3,252
+
+6. TWEET LENGTH ANALYSIS
+========================
+Tweet Length Statistics:
+- Mean length: 228.2 characters
+- Median length: 250.0 characters
+- Min length: 21 characters
+- Max length: 741 characters
+- Standard deviation: 64.9
+
+Length Distribution:
+- Very Short (0-50): 69 tweets (0.3%)
+- Short (51-100): 1,081 tweets (4.9%)
+- Medium (101-200): 5,270 tweets (23.9%)
+- Long (201-280): 11,011 tweets (49.9%)
+- Very Long (281+): 4,633 tweets (21.0%)
+
+Example Tweets by Length:
+
+Shortest tweets:
+1. (21 chars): @BiancaNaom1 Failure ...
+2. (21 chars): @LarryMadowo Failure ...
+3. (27 chars): AI generated misinformation...
+
+Longest tweets:
+1. (741 chars): @centienceio @LinaBytes @squire_blobert @bossu_online @MCAIFEESOL @NOBULLSHIT_EXE @ForeverCurtis_ @c...
+2. (725 chars): @MCAIFEESOL @0xlawyerAI @Kasumi152_ai @degen8ball @komorebi_os @LinaBytes @MuradAIcto @Smith00xbtc @...
+3. (599 chars): @AShoutOutfromMN @j2dumfounded @DavidManOnFire @carrybeyond @zipillinois @JoeAndTheScot @Loveon999 @...
+
+7. SUMMARY REPORT
+=================
+Dataset Overview:
+- Total tweets: 22,064
+- Date range: 2023-01-02 to 2024-11-27
+- Span: 694 days
+- Valid dates: 22,064 out of 22,064
+
+Tweet Characteristics:
+- Average length: 228.2 characters
+- Median length: 250.0 characters
+- Shortest tweet: 21 characters
+- Longest tweet: 741 characters
+
+Data Quality:
+- Missing values: 0
+- Duplicate tweets: 429
+
+Activity:
+- Average tweets per day: 32.5
+- Most active day: 2024-11-21 (268 tweets)
+
+8. KEY FINDINGS
+===============
+1. Dataset covers GenerativeAI discussion period (Jan 2023 - Nov 2024)
+2. Peak activity occurred in 2024-11 with 3,252 tweets
+3. Most tweets are long length (201-280 characters) at 49.9%
+4. 100% of dates are valid, indicating excellent data quality
+5. 1.9% duplicate tweets suggest some retweets or repeated content
+6. Average of 33 tweets per day shows high engagement
+7. Most active day was 2024-11-21 with 268 tweets
+
+END OF REPORT
+=============

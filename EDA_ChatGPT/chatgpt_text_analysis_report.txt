@@ -1,0 +1,122 @@
+
+CHATGPT TWEET TEXT ANALYSIS REPORT
+==================================
+
+1. DATASET OVERVIEW
+===================
+Total tweets analyzed: 478,347
+Date range: 2022-11-30 to 2023-04-08
+
+2. RAW TWEET STRUCTURE ANALYSIS
+===============================
+Tweet Structure Patterns:
+- Tweets with hashtags: 478,192 (100.0%)
+- Tweets with mentions: 129,562 (27.1%)
+- Tweets with URLs: 318,047 (66.5%)
+- Retweets (RT @): 1,577 (0.3%)
+
+Tweet Length Statistics:
+- Mean length: 177.6 characters
+- Median length: 175.0 characters
+- Min length: 7.0 characters
+- Max length: 985.0 characters
+
+3. FREQUENCY ANALYSIS
+=====================
+
+Top 20 Most Common Words:
+ 1. chatgpt         : 586,881
+ 2. https           : 385,373
+ 3. openai          : 84,495
+ 4. like            : 35,765
+ 5. google          : 32,950
+ 6. artificialintelligence : 31,834
+ 7. new             : 30,647
+ 8. gpt             : 30,639
+ 9. use             : 30,157
+10. amp             : 27,150
+11. using           : 25,113
+12. technology      : 23,971
+13. microsoft       : 20,748
+14. asked           : 19,519
+15. get             : 19,451
+16. write           : 18,751
+17. time            : 18,604
+18. chatbot         : 18,570
+19. one             : 17,777
+20. tech            : 17,703
+
+Top 20 Most Common Hashtags:
+ 1. #chatgpt             : 486,297
+ 2. #ai                  : 130,597
+ 3. #openai              : 49,623
+ 4. #artificialintelligence : 31,822
+ 5. #gpt4                : 12,315
+ 6. #technology          : 11,961
+ 7. #google              : 11,786
+ 8. #machinelearning     : 11,092
+ 9. #gpt                 : 9,766
+10. #microsoft           : 9,540
+11. #tech                : 9,053
+12. #midjourney          : 9,046
+13. #chatbot             : 8,644
+14. #nft                 : 8,403
+15. #generativeai        : 8,402
+16. #web3                : 7,517
+17. #gpt3                : 7,119
+18. #crypto              : 6,992
+19. #bard                : 6,421
+20. #bing                : 6,124
+
+Top 20 Most Common Mentions:
+ 1. @openai              : 20,953
+ 2. @elonmusk            : 7,152
+ 3. @google              : 2,921
+ 4. @microsoft           : 2,812
+ 5. @sama                : 2,592
+ 6. @youtube             : 2,275
+ 7. @bing                : 1,438
+ 8. @spirosmargaris      : 1,228
+ 9. @betamoroney         : 1,213
+10. @khulood_almani      : 812
+11. @glengilmore         : 773
+12. @nicochan33          : 716
+13. @ronald_vanloon      : 681
+14. @jolaburnett         : 640
+15. @jimharris           : 636
+16. @chatgpt             : 621
+17. @forbes              : 613
+18. @enricomolinari      : 603
+19. @drjdrooghaag        : 591
+20. @nigewillson         : 590
+
+4. LANGUAGE DETECTION
+====================
+Languages detected in ALL 478,347 tweets:
+unknown    : 478,347 (100.0%)
+
+5. TWEET LENGTH DISTRIBUTION
+============================
+Very Short (0-50)    : 19,392 tweets (4.1%)
+Short (51-100)       : 85,806 tweets (17.9%)
+Medium (101-200)     : 172,796 tweets (36.1%)
+Long (201-280)       : 153,761 tweets (32.1%)
+Very Long (281+)     : 46,540 tweets (9.7%)
+
+Statistical Summary:
+- Mean: 177.6 characters
+- Median: 175.0 characters
+- Standard Deviation: 80.7
+- 25th Percentile: 108.0
+- 75th Percentile: 254.0
+
+6. KEY FINDINGS
+===============
+1. Most tweets contain hashtags and mentions, indicating active social media engagement
+2. Tweet lengths vary widely, with most being medium length (101-200 characters)
+3. Common words and hashtags reveal the main topics of discussion around ChatGPT
+4. Language detection shows the primary language of the dataset
+5. Retweet patterns indicate viral content and information sharing
+
+END OF REPORT
+=============
