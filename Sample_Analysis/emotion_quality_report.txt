@@ -1,0 +1,17 @@
+
+EMOTION LABELING QUALITY REPORT
+==============================
+
+This report helps you evaluate the quality of emotion labeling
+in your dataset. Use these metrics to assess reliability:
+
+1. HIGH CONFIDENCE LABELS (>0.8): Most reliable
+2. MEDIUM CONFIDENCE LABELS (0.5-0.8): Generally reliable  
+3. LOW CONFIDENCE LABELS (<0.5): May need review
+
+RECOMMENDATIONS:
+- Focus on high-confidence labels for analysis
+- Review low-confidence labels manually
+- Consider re-labeling if quality score < 60
+- Use similarity scores to validate matches
+    

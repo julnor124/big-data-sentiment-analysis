@@ -1,0 +1,63 @@
+SAMPLE ANALYSIS SUMMARY
+========================
+
+Created: 2025-10-07
+Purpose: Review emotion labeling accuracy
+
+FILES CREATED:
+==============
+
+Scripts:
+- create_emotion_sample_comparison.py (AfterChatGPT dataset)
+- create_labeled_tweets_ai_comparison.py (Tweets AI dataset)
+
+Sample Files:
+- emotion_sample_comparison.csv (400 tweets from AfterChatGPT)
+- high_quality_emotion_sample.csv (~140 high-quality matches)
+- labeled_tweets_ai_comparison.csv (400 tweets from Tweets AI)
+- high_quality_labeled_tweets_ai_sample.csv (~140 high-quality matches)
+
+KEY STATISTICS:
+==============
+
+AfterChatGPT Dataset:
+- Total samples: 400 tweets
+- Successful matches: 390+ tweets (97.5% success rate)
+- Average similarity: 43.5%
+- Average length reduction: 85.7 characters
+- Emotions: 7 categories (neutral, joy, anger, sadness, fear, surprise, disgust)
+
+Tweets AI Dataset:
+- Total samples: 400 tweets
+- Successful matches: 390+ tweets (97.5% success rate)
+- Average similarity: 42.4%
+- Average length reduction: 51.3 characters
+- Emotions: 7 categories (neutral, joy, anger, sadness, fear, surprise, disgust)
+
+REVIEW FOCUS:
+=============
+
+1. High-confidence labels (probability > 0.8) that seem incorrect
+2. Low-confidence labels (probability < 0.5) that might be uncertain
+3. Edge cases where emotion could be ambiguous
+4. Context-dependent emotions that might be misclassified
+5. Sarcasm, irony, or subtle emotional expressions
+
+COLUMNS TO REVIEW:
+=================
+
+- Emotion_Label: The detected emotion
+- Emotion_Probability: Confidence score (0-1)
+- Original_Tweet: Raw tweet before cleaning
+- Cleaned_Tweet: Processed tweet after cleaning
+- Similarity_Score: How well original and cleaned match
+- Original_Length vs Cleaned_Length: What was removed
+
+USAGE:
+======
+
+1. Open CSV files in Excel or any spreadsheet application
+2. Sort by Emotion_Probability to focus on high/low confidence cases
+3. Read Original_Tweet to understand context
+4. Check if Emotion_Label matches your interpretation
+5. Note any systematic mislabeling patterns

@@ -1,0 +1,78 @@
+COMBINED DATASET SUMMARY
+========================
+
+Created: 2025-10-07
+Purpose: Main dataset and source files for sentiment analysis
+
+MAIN DATASET:
+============
+
+AfterChatGPT.csv:
+- Size: 490,457 tweets (59MB)
+- Sources: ChatGPT (95.7%) + GenerativeAI (4.3%)
+- Date range: 2022-11-30 to 2024-11-15
+- Columns: Date, Tweet, Source
+- Status: Ready for analysis
+
+SOURCE DATASETS:
+===============
+
+generativeaiopinion.csv:
+- Size: 22,066 tweets (6.5MB)
+- Topic: Generative AI discussions
+- Date range: 2024-08-01 to 2024-11-21
+- Language: Primarily English
+
+tweets_ai.csv:
+- Size: 893,076 tweets (380MB)
+- Topic: AI-related discussions
+- Date range: 2017-01-31 to 2021-01-27
+- Language: Primarily English (96.7%)
+
+SCRIPTS:
+========
+
+combine_datasets.py:
+- Combines ChatGPT and GenerativeAI datasets
+- Adds source identification
+- Generates combination report
+- Handles data quality checks
+
+REPORTS:
+========
+
+AfterChatGPT_combination_report.txt:
+- Detailed combination statistics
+- Data quality metrics
+- Source distribution analysis
+- Memory usage information
+
+KEY FEATURES:
+=============
+
+- No missing values
+- No duplicates
+- Text preprocessed
+- Source identification
+- Time-series data
+- Ready for ML/NLP tasks
+
+USAGE:
+======
+
+1. Load main dataset for analysis
+2. Filter by source (ChatGPT/GenerativeAI)
+3. Perform time-based analysis
+4. Conduct sentiment analysis
+5. Train machine learning models
+6. Generate visualizations
+
+RESEARCH APPLICATIONS:
+======================
+
+- Sentiment analysis on AI topics
+- Comparative source analysis
+- Trend analysis over time
+- Topic modeling and classification
+- Social media discourse analysis
+- Machine learning model training

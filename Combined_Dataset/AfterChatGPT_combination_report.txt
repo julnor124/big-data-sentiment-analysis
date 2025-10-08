@@ -1,0 +1,33 @@
+
+DATASET COMBINATION REPORT
+=========================
+
+COMBINATION SUMMARY:
+- ChatGPT dataset: 469,169 rows
+- GenerativeAI dataset: 21,288 rows
+- Combined dataset: 490,457 rows
+- Output file: AfterChatGPT.csv
+
+DATASET COMPOSITION:
+- ChatGPT percentage: 95.66%
+- GenerativeAI percentage: 4.34%
+
+MEMORY USAGE:
+- Combined dataset: 124.09 MB
+
+COLUMNS:
+- Date: object
+- Tweet: object
+- Source: object
+
+SOURCE DISTRIBUTION:
+- ChatGPT: 469,169 rows (95.66%)
+- GenAI: 21,288 rows (4.34%)
+
+DATASET QUALITY:
+- No missing dates: ✅
+- No missing tweets: ✅
+- No missing sources: ✅
+- No duplicates: ❌
+- Text preprocessed: ✅
+

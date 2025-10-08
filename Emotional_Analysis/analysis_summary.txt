@@ -1,0 +1,70 @@
+EMOTIONAL ANALYSIS SUMMARY
+=========================
+
+Created: 2025-10-07
+Purpose: Organized emotional analysis and sentiment detection files
+
+DATASETS:
+=========
+
+AfterChatGPT.labeled.csv:
+- Size: 490,457 tweets
+- Sources: ChatGPT (95.7%) + GenerativeAI (4.3%)
+- Date range: 2022-11-30 to 2024-11-15
+- Emotions: 7 categories with confidence scores
+
+clean_tweets_ai.labeled.csv:
+- Size: 490,118 tweets
+- Source: AI-related tweets
+- Date range: 2017-01-31 to 2021-01-27
+- Emotions: 7 categories with confidence scores
+
+EMOTION CATEGORIES:
+===================
+
+1. Neutral - Factual, informative content
+2. Joy - Happy, excited, positive sentiment
+3. Anger - Frustrated, annoyed, negative sentiment
+4. Sadness - Disappointed, melancholic, negative sentiment
+5. Fear - Worried, anxious, concerned
+6. Surprise - Unexpected, amazed, shocked
+7. Disgust - Repulsed, offended, negative sentiment
+
+ANALYSIS FILES:
+==============
+
+Scripts:
+- emotion_timeline_analysis.py - Timeline emotion analysis
+
+Outputs:
+- emotion_timeline_analysis_report.txt - Detailed analysis report
+- emotion_timeline_analysis.png - Emotion trends visualization
+
+KEY FEATURES:
+=============
+
+- Emotion confidence scores (0-1 scale)
+- Time-series emotion analysis
+- Source-specific emotion patterns
+- High/low confidence filtering
+- Event correlation capabilities
+
+USAGE:
+======
+
+1. Load labeled datasets for analysis
+2. Filter by emotion categories
+3. Analyze confidence scores
+4. Perform time-based analysis
+5. Compare emotion patterns across sources
+6. Generate visualizations and reports
+
+RESEARCH APPLICATIONS:
+======================
+
+- Public sentiment analysis on AI topics
+- Emotion trend tracking over time
+- Event-driven emotion analysis
+- Source comparison studies
+- Confidence score validation
+- Long-term sentiment evolution
