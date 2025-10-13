@@ -102,6 +102,17 @@ def create_visualizations(all_data, results):
     plt.style.use('default')
     sns.set_palette("husl")
     
+    # Define high-contrast colors for emotions
+    emotion_colors = {
+        'neutral': '#808080',    # Gray
+        'joy': '#FFD700',        # Gold/Yellow
+        'anger': '#DC143C',      # Crimson Red
+        'sadness': '#4169E1',    # Royal Blue
+        'fear': '#8B008B',       # Dark Magenta
+        'surprise': '#FF8C00',   # Dark Orange
+        'disgust': '#228B22'     # Forest Green
+    }
+    
     # Create a figure with multiple subplots
     fig = plt.figure(figsize=(20, 15))
     
@@ -199,8 +210,12 @@ def create_visualizations(all_data, results):
         period_data = all_data[all_data['period'] == period]
         emotion_counts = period_data['emotion_label'].value_counts()
         
+        # Get colors for emotions
+        colors = [emotion_colors.get(emotion, '#999999') for emotion in emotion_counts.index]
+        
         # Create pie chart without percentage labels on slices
         wedges, texts = plt.pie(emotion_counts.values, 
+                               colors=colors,
                                autopct=None, 
                                startangle=90)
         
@@ -302,8 +317,13 @@ def identify_key_changes(results):
     
     return changes
 
-def generate_report(results, changes, chi2, p_value):
+def generate_report(results, changes, chi2, p_value, all_data):
     """Generate a comprehensive analysis report"""
+    
+    # Calculate overall emotion distribution
+    total_tweets = sum(results[period]['total'] for period in results)
+    overall_emotion_counts = all_data['emotion_label'].value_counts()
+    overall_emotion_pcts = (overall_emotion_counts / len(all_data) * 100).round(1)
     
     report = f"""
 EMOTION TIMELINE ANALYSIS REPORT (ITERATION 2)
@@ -317,8 +337,18 @@ This analysis compares emotional sentiment in tweets about AI/artificial intelli
 2. Right after ChatGPT Launch (2022): {results['Right after ChatGPT (2022)']['total']:,} tweets (from postlaunch.labeled.csv)
 3. Established ChatGPT Era (2023+): {results['Established ChatGPT (2023+)']['total']:,} tweets (from postlaunch.labeled.csv)
 
-Total dataset: {sum(results[period]['total'] for period in results):,} tweets
+Total dataset: {total_tweets:,} tweets
 
+OVERALL EMOTION DISTRIBUTION (ALL PERIODS COMBINED)
+---------------------------------------------------
+"""
+    
+    for emotion in sorted(overall_emotion_pcts.index):
+        count = overall_emotion_counts[emotion]
+        pct = overall_emotion_pcts[emotion]
+        report += f"   {emotion}: {count:,} tweets ({pct}%)\n"
+    
+    report += f"""
 KEY FINDINGS
 ------------
 
@@ -407,7 +437,7 @@ def main():
     changes = identify_key_changes(results)
     
     # Generate comprehensive report
-    report = generate_report(results, changes, chi2, p_value)
+    report = generate_report(results, changes, chi2, p_value, all_data)
     
     print("\n" + "=" * 50)
     print("ANALYSIS COMPLETE")

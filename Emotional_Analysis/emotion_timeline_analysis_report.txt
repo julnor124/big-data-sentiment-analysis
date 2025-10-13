@@ -12,6 +12,16 @@ This analysis compares emotional sentiment in tweets about AI/artificial intelli
 
 Total dataset: 980,546 tweets
 
+OVERALL EMOTION DISTRIBUTION (ALL PERIODS COMBINED)
+---------------------------------------------------
+   anger: 30,641 tweets (3.1%)
+   disgust: 4,894 tweets (0.5%)
+   fear: 50,010 tweets (5.1%)
+   joy: 135,228 tweets (13.8%)
+   neutral: 561,701 tweets (57.3%)
+   sadness: 35,446 tweets (3.6%)
+   surprise: 162,626 tweets (16.6%)
+
 KEY FINDINGS
 ------------
 
@@ -67,4 +77,4 @@ METHODOLOGY
 - Statistical analysis: Chi-square test for independence
 - Time periods defined based on ChatGPT launch timeline (November 2022)
 
-Generated on: 2025-10-06 16:28:21
+Generated on: 2025-10-13 13:20:49
