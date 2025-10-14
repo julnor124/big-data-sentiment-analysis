@@ -1,0 +1,385 @@
+
+POPULATION INFERENCE FROM SAMPLE ANALYSIS
+==========================================
+
+Generated: 2025-10-13 14:49:41
+
+EXECUTIVE SUMMARY
+-----------------
+This report provides statistically valid estimates of model accuracy on the full datasets,
+based on manual evaluation of stratified samples. Uses standard statistical inference
+methods (post-stratification weighting with bootstrap confidence intervals).
+
+METHODOLOGY
+-----------
+
+1. SAMPLING DESIGN:
+   - Type: Stratified random sampling
+   - Strata: Emotion categories (7 total)
+   - Sample allocation: Balanced (equal per stratum)
+   - Advantage: Ensures rare categories represented
+
+2. GROUND TRUTH:
+   - Manual evaluation of sample
+   - Human labels as gold standard
+   - Binary outcome: correct/incorrect
+
+3. ESTIMATION METHOD:
+   - Per-stratum error rates from sample
+   - Post-stratification weighting by population proportions
+   - Bootstrap confidence intervals (10,000 iterations)
+
+4. INFERENCE:
+   - Sample statistics → Population parameters
+   - Weighted accuracy → Full dataset accuracy
+   - Confidence intervals → Uncertainty quantification
+
+STATISTICAL FRAMEWORK
+---------------------
+
+Population: All tweets in dataset (N ≈ 490,000)
+Sample: Manually evaluated subset (n ≈ 400)
+Parameter of interest: Weighted accuracy
+
+Estimator:
+  θ̂ = Σᵢ (p̂ᵢ × wᵢ)
+  
+  Where:
+  - θ̂ = estimated population accuracy
+  - p̂ᵢ = sample accuracy for emotion i
+  - wᵢ = population proportion of emotion i
+
+This is the Horvitz-Thompson estimator for stratified sampling.
+
+
+================================================================================
+DATASET: Tweets AI (Iter1)
+================================================================================
+
+POPULATION PARAMETERS:
+- Size: 490,118 tweets
+- Emotion distribution: Highly imbalanced
+
+SAMPLE CHARACTERISTICS:
+- Size: 390 tweets
+- Design: Stratified (balanced across emotions)
+- Ground truth: Manual evaluation
+
+INFERENCE RESULTS:
+
+1. POINT ESTIMATE:
+   Population accuracy: 80.09%
+   
+2. INTERVAL ESTIMATE (95% CI):
+   [76.95%, 82.76%]
+   
+3. PRECISION:
+   Margin of error: ±2.90%
+   
+4. COMPARISON:
+   Sample (unweighted): 56.2%
+   Population (weighted): 80.09%
+   Difference: 23.9pp
+
+EXTRAPOLATION TO FULL DATASET:
+
+If the model were applied to all 490,118 tweets:
+- Estimated correct predictions: 392,528 (80.1%)
+- Estimated incorrect predictions: 97,589 (19.9%)
+
+INTERPRETATION:
+
+We estimate with 95% confidence that the model achieves
+80.1% ± 2.9% accuracy on the full dataset.
+
+This means:
+- Best estimate: 80.1% of 490,118 tweets correctly predicted
+- Lower bound: 77.0% (conservative estimate)
+- Upper bound: 82.8% (optimistic estimate)
+
+VALIDITY:
+✓ Sample size adequate (n=390)
+✓ Stratified design ensures representation
+✓ Post-stratification corrects for sampling design
+✓ Bootstrap CI accounts for sampling variability
+
+
+================================================================================
+DATASET: AfterChatGPT (Iter1)
+================================================================================
+
+POPULATION PARAMETERS:
+- Size: 490,457 tweets
+- Emotion distribution: Highly imbalanced
+
+SAMPLE CHARACTERISTICS:
+- Size: 395 tweets
+- Design: Stratified (balanced across emotions)
+- Ground truth: Manual evaluation
+
+INFERENCE RESULTS:
+
+1. POINT ESTIMATE:
+   Population accuracy: 74.68%
+   
+2. INTERVAL ESTIMATE (95% CI):
+   [68.13%, 80.81%]
+   
+3. PRECISION:
+   Margin of error: ±6.34%
+   
+4. COMPARISON:
+   Sample (unweighted): 67.3%
+   Population (weighted): 74.68%
+   Difference: 7.3pp
+
+EXTRAPOLATION TO FULL DATASET:
+
+If the model were applied to all 490,457 tweets:
+- Estimated correct predictions: 366,267 (74.7%)
+- Estimated incorrect predictions: 124,189 (25.3%)
+
+INTERPRETATION:
+
+We estimate with 95% confidence that the model achieves
+74.7% ± 6.3% accuracy on the full dataset.
+
+This means:
+- Best estimate: 74.7% of 490,457 tweets correctly predicted
+- Lower bound: 68.1% (conservative estimate)
+- Upper bound: 80.8% (optimistic estimate)
+
+VALIDITY:
+✓ Sample size adequate (n=395)
+✓ Stratified design ensures representation
+✓ Post-stratification corrects for sampling design
+✓ Bootstrap CI accounts for sampling variability
+
+
+================================================================================
+DATASET: Tweets AI Downsampled (Iter2)
+================================================================================
+
+POPULATION PARAMETERS:
+- Size: 494,227 tweets
+- Emotion distribution: Highly imbalanced
+
+SAMPLE CHARACTERISTICS:
+- Size: 400 tweets
+- Design: Stratified (balanced across emotions)
+- Ground truth: Manual evaluation
+
+INFERENCE RESULTS:
+
+1. POINT ESTIMATE:
+   Population accuracy: 67.93%
+   
+2. INTERVAL ESTIMATE (95% CI):
+   [58.18%, 77.22%]
+   
+3. PRECISION:
+   Margin of error: ±9.52%
+   
+4. COMPARISON:
+   Sample (unweighted): 53.0%
+   Population (weighted): 67.93%
+   Difference: 14.9pp
+
+EXTRAPOLATION TO FULL DATASET:
+
+If the model were applied to all 494,227 tweets:
+- Estimated correct predictions: 335,710 (67.9%)
+- Estimated incorrect predictions: 158,516 (32.1%)
+
+INTERPRETATION:
+
+We estimate with 95% confidence that the model achieves
+67.9% ± 9.5% accuracy on the full dataset.
+
+This means:
+- Best estimate: 67.9% of 494,227 tweets correctly predicted
+- Lower bound: 58.2% (conservative estimate)
+- Upper bound: 77.2% (optimistic estimate)
+
+VALIDITY:
+✓ Sample size adequate (n=400)
+✓ Stratified design ensures representation
+✓ Post-stratification corrects for sampling design
+✓ Bootstrap CI accounts for sampling variability
+
+
+================================================================================
+DATASET: Postlaunch (Iter2)
+================================================================================
+
+POPULATION PARAMETERS:
+- Size: 499,694 tweets
+- Emotion distribution: Highly imbalanced
+
+SAMPLE CHARACTERISTICS:
+- Size: 400 tweets
+- Design: Stratified (balanced across emotions)
+- Ground truth: Manual evaluation
+
+INFERENCE RESULTS:
+
+1. POINT ESTIMATE:
+   Population accuracy: 78.84%
+   
+2. INTERVAL ESTIMATE (95% CI):
+   [72.44%, 84.50%]
+   
+3. PRECISION:
+   Margin of error: ±6.03%
+   
+4. COMPARISON:
+   Sample (unweighted): 65.5%
+   Population (weighted): 78.84%
+   Difference: 13.3pp
+
+EXTRAPOLATION TO FULL DATASET:
+
+If the model were applied to all 499,694 tweets:
+- Estimated correct predictions: 393,943 (78.8%)
+- Estimated incorrect predictions: 105,750 (21.2%)
+
+INTERPRETATION:
+
+We estimate with 95% confidence that the model achieves
+78.8% ± 6.0% accuracy on the full dataset.
+
+This means:
+- Best estimate: 78.8% of 499,694 tweets correctly predicted
+- Lower bound: 72.4% (conservative estimate)
+- Upper bound: 84.5% (optimistic estimate)
+
+VALIDITY:
+✓ Sample size adequate (n=400)
+✓ Stratified design ensures representation
+✓ Post-stratification corrects for sampling design
+✓ Bootstrap CI accounts for sampling variability
+
+
+
+COMPARATIVE SUMMARY
+-------------------
+
+All datasets show similar pattern:
+1. Sample accuracy (unweighted) underestimates true performance
+2. Population accuracy (weighted) is higher due to good performance on common emotions
+3. Confidence intervals confirm estimates are reliable
+
+Estimated Population Accuracies:
+
+Tweets AI (Iter1):
+  Point estimate: 80.09%
+  95% CI: [76.95%, 82.76%]
+  Margin of error: ±2.90%
+
+AfterChatGPT (Iter1):
+  Point estimate: 74.68%
+  95% CI: [68.13%, 80.81%]
+  Margin of error: ±6.34%
+
+Tweets AI Downsampled (Iter2):
+  Point estimate: 67.93%
+  95% CI: [58.18%, 77.22%]
+  Margin of error: ±9.52%
+
+Postlaunch (Iter2):
+  Point estimate: 78.84%
+  95% CI: [72.44%, 84.50%]
+  Margin of error: ±6.03%
+
+
+STATISTICAL ASSUMPTIONS
+-----------------------
+
+1. REPRESENTATIVENESS:
+   Assumption: Sample represents population within strata
+   Justification: Random selection, stratified design
+   Impact: Critical - if violated, estimates biased
+   
+2. INDEPENDENCE:
+   Assumption: Observations are independent
+   Justification: Tweets from different users/times
+   Impact: Affects variance estimates
+   
+3. STABLE ERROR RATES:
+   Assumption: Error rate constant within emotion
+   Justification: Model applies same rules uniformly
+   Impact: Moderate - some heterogeneity expected
+   
+4. SAMPLING DISTRIBUTION:
+   Assumption: Bootstrap approximates sampling distribution
+   Justification: Large sample, CLT applies
+   Impact: CI accuracy
+
+LIMITATIONS
+-----------
+
+1. Sample size limitations:
+   - CIs wider for smaller samples
+   - Rare emotions have larger uncertainty
+   - Tradeoff: precision vs. cost
+
+2. Temporal validity:
+   - Estimates apply to current data distribution
+   - May change if population shifts
+   - Periodic re-evaluation recommended
+
+3. Sampling bias:
+   - Assumes random selection
+   - Any systematic bias affects estimates
+   - Stratification reduces but doesn't eliminate
+
+4. Model assumptions:
+   - Assumes error rate homogeneous within stratum
+   - Some tweets may be harder than others
+   - Average effect captured
+
+CONCLUSIONS
+-----------
+
+✓ STATISTICALLY VALID: Sample-to-population inference is well-founded
+
+✓ RELIABLE ESTIMATES: Confidence intervals show reasonable precision
+
+✓ PRACTICAL UTILITY: Weighted accuracy provides realistic performance metric
+
+✓ CONSERVATIVE: Bootstrap CIs account for uncertainty
+
+The weighted accuracy estimates represent our best statistical inference
+of model performance on the full datasets, with proper quantification
+of uncertainty through confidence intervals.
+
+RECOMMENDATIONS FOR REPORTING
+------------------------------
+
+✅ DO SAY:
+- "Based on manual evaluation of n tweets, population accuracy is estimated at X% (95% CI: [L%, U%])"
+- "Using stratified sampling and post-stratification weighting, we estimate..."
+- "The model achieves approximately X% accuracy on the full dataset"
+
+✅ DO ACKNOWLEDGE:
+- "Estimates based on sample of n tweets from population of N"
+- "Confidence intervals account for sampling uncertainty"
+- "Assumes sample is representative of population"
+
+❌ DON'T SAY:
+- "Accuracy is exactly X%" (use "estimated" or "approximately")
+- "All tweets correctly predicted" (acknowledge uncertainty)
+- Claim without mentioning sampling
+
+REFERENCES
+----------
+
+Statistical Methods:
+- Horvitz, D.G. & Thompson, D.J. (1952). A generalization of sampling without replacement from a finite universe
+- Efron, B. (1979). Bootstrap methods: Another look at the jackknife
+- Cochran, W.G. (1977). Sampling Techniques (3rd ed.)
+
+Standard Practice:
+- Survey sampling methodology
+- Medical diagnostic test evaluation  
+- Machine learning model validation

@@ -1,0 +1,187 @@
+================================================================================
+STATISTICAL SIGNIFICANCE ANALYSIS
+================================================================================
+Testing statistical significance of weighted accuracy results
+
+
+================================================================================
+STATISTICAL ANALYSIS: Tweets AI (Iter1)
+================================================================================
+
+Basic Metrics:
+  Sample size: 390
+  Total errors: 171
+  Unweighted accuracy: 56.2%
+  Weighted accuracy: 80.09%
+
+1. CONFIDENCE INTERVALS (95%):
+  Weighted Accuracy: 80.09% [76.92%, 82.76%]
+  Unweighted Accuracy: 56.2% [51.2%, 61.1%]
+
+2. CHI-SQUARE TEST (Are error rates different across emotions?):
+  Chi-square statistic: 116.20
+  p-value: 1.0214e-22
+  Degrees of freedom: 6
+  ✓ HIGHLY SIGNIFICANT (p < 0.001): Error rates differ significantly across emotions
+
+3. BINOMIAL TEST (Is model better than random guessing?):
+  Baseline (random): 14.3% (1/7 emotions)
+  Model accuracy: 56.2%
+  p-value: 1.8231e-82
+  ✓ HIGHLY SIGNIFICANT: Model is much better than random (p < 0.001)
+
+4. EFFECT SIZE (Weighted vs Unweighted difference):
+  Difference: 23.9 percentage points
+  Cohen's h: 0.522
+  Effect size: large
+
+================================================================================
+STATISTICAL ANALYSIS: AfterChatGPT (Iter1)
+================================================================================
+
+Basic Metrics:
+  Sample size: 395
+  Total errors: 129
+  Unweighted accuracy: 67.3%
+  Weighted accuracy: 74.68%
+
+1. CONFIDENCE INTERVALS (95%):
+  Weighted Accuracy: 74.68% [68.13%, 80.74%]
+  Unweighted Accuracy: 67.3% [62.7%, 72.0%]
+
+2. CHI-SQUARE TEST (Are error rates different across emotions?):
+  Chi-square statistic: 37.50
+  p-value: 1.4070e-06
+  Degrees of freedom: 6
+  ✓ HIGHLY SIGNIFICANT (p < 0.001): Error rates differ significantly across emotions
+
+3. BINOMIAL TEST (Is model better than random guessing?):
+  Baseline (random): 14.3% (1/7 emotions)
+  Model accuracy: 67.3%
+  p-value: 4.0422e-127
+  ✓ HIGHLY SIGNIFICANT: Model is much better than random (p < 0.001)
+
+4. EFFECT SIZE (Weighted vs Unweighted difference):
+  Difference: 7.3 percentage points
+  Cohen's h: 0.162
+  Effect size: small
+
+================================================================================
+STATISTICAL ANALYSIS: Tweets AI Downsampled (Iter2)
+================================================================================
+
+Basic Metrics:
+  Sample size: 400
+  Total errors: 188
+  Unweighted accuracy: 53.0%
+  Weighted accuracy: 67.93%
+
+1. CONFIDENCE INTERVALS (95%):
+  Weighted Accuracy: 67.93% [58.05%, 77.04%]
+  Unweighted Accuracy: 53.0% [48.1%, 57.9%]
+
+2. CHI-SQUARE TEST (Are error rates different across emotions?):
+  Chi-square statistic: 48.95
+  p-value: 7.6199e-09
+  Degrees of freedom: 6
+  ✓ HIGHLY SIGNIFICANT (p < 0.001): Error rates differ significantly across emotions
+
+3. BINOMIAL TEST (Is model better than random guessing?):
+  Baseline (random): 14.3% (1/7 emotions)
+  Model accuracy: 53.0%
+  p-value: 1.0537e-73
+  ✓ HIGHLY SIGNIFICANT: Model is much better than random (p < 0.001)
+
+4. EFFECT SIZE (Weighted vs Unweighted difference):
+  Difference: 14.9 percentage points
+  Cohen's h: 0.307
+  Effect size: medium
+
+================================================================================
+STATISTICAL ANALYSIS: Postlaunch (Iter2)
+================================================================================
+
+Basic Metrics:
+  Sample size: 400
+  Total errors: 138
+  Unweighted accuracy: 65.5%
+  Weighted accuracy: 78.84%
+
+1. CONFIDENCE INTERVALS (95%):
+  Weighted Accuracy: 78.84% [72.43%, 84.53%]
+  Unweighted Accuracy: 65.5% [60.8%, 70.2%]
+
+2. CHI-SQUARE TEST (Are error rates different across emotions?):
+  Chi-square statistic: 69.49
+  p-value: 5.1915e-13
+  Degrees of freedom: 6
+  ✓ HIGHLY SIGNIFICANT (p < 0.001): Error rates differ significantly across emotions
+
+3. BINOMIAL TEST (Is model better than random guessing?):
+  Baseline (random): 14.3% (1/7 emotions)
+  Model accuracy: 65.5%
+  p-value: 8.5830e-121
+  ✓ HIGHLY SIGNIFICANT: Model is much better than random (p < 0.001)
+
+4. EFFECT SIZE (Weighted vs Unweighted difference):
+  Difference: 13.3 percentage points
+  Cohen's h: 0.300
+  Effect size: medium
+
+================================================================================
+COMPARING ITERATIONS
+================================================================================
+
+1. PRE-CHATGPT: Iteration 1 vs Iteration 2
+  Iter1 weighted: 80.09%
+  Iter2 weighted: 67.93%
+  Difference: 12.16pp
+  Z-statistic: 3.893
+  p-value: 0.0001
+  ✓ SIGNIFICANT: Iterations differ significantly (p < 0.05)
+
+2. POST-CHATGPT: Iteration 1 vs Iteration 2
+  Iter1 weighted: 74.68%
+  Iter2 weighted: 78.84%
+  Difference: -4.16pp
+  Z-statistic: -1.388
+  p-value: 0.1651
+  ✗ NOT SIGNIFICANT: No significant difference (p >= 0.05)
+
+3. ITERATION 1: Pre-ChatGPT vs Post-ChatGPT
+  Pre-ChatGPT weighted: 80.09%
+  Post-ChatGPT weighted: 74.68%
+  Difference: 5.41pp
+  Z-statistic: 1.811
+  p-value: 0.0701
+  ✗ NOT SIGNIFICANT: No significant difference (p >= 0.05)
+
+================================================================================
+GENERATING STATISTICAL REPORT
+================================================================================
+
+✅ Statistical report saved as 'Weighted_Results/statistical_significance_report.txt'
+
+================================================================================
+STATISTICAL SUMMARY
+================================================================================
+
+Tweets AI (Iter1):
+  Weighted: 80.09% ± 2.92%
+  Chi-square p-value: 1.0214e-22 (significant)
+  Better than random: p = 1.8231e-82 (highly significant)
+
+AfterChatGPT (Iter1):
+  Weighted: 74.68% ± 6.31%
+  Chi-square p-value: 1.4070e-06 (significant)
+  Better than random: p = 4.0422e-127 (highly significant)
+
+Tweets AI Downsampled (Iter2):
+  Weighted: 67.93% ± 9.49%
+  Chi-square p-value: 7.6199e-09 (significant)
+  Better than random: p = 1.0537e-73 (highly significant)
+
+Postlaunch (Iter2):
+  Weighted: 78.84% ± 6.05%
+  Chi-square p-value: 5.1915e-13 (significant)
+  Better than random: p = 8.5830e-121 (highly significant)

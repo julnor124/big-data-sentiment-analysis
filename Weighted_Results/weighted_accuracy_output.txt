@@ -1,0 +1,303 @@
+================================================================================
+WEIGHTED ACCURACY CALCULATOR
+================================================================================
+Adjusting accuracy metrics for class imbalance
+
+
+================================================================================
+ANALYZING: Tweets AI Dataset (Pre-ChatGPT)
+================================================================================
+
+================================================================================
+WEIGHTED ACCURACY ANALYSIS: Tweets AI (Pre-ChatGPT)
+================================================================================
+
+Sample size: 390 tweets
+Rows marked as incorrect: 175
+
+Emotion distribution in SAMPLE (balanced):
+  anger: 57 tweets (14.6%)
+  disgust: 56 tweets (14.4%)
+  fear: 55 tweets (14.1%)
+  joy: 53 tweets (13.6%)
+  neutral: 58 tweets (14.9%)
+  sadness: 56 tweets (14.4%)
+  surprise: 55 tweets (14.1%)
+
+Emotion distribution in ERRORS (after cleaning 4 invalid rows):
+  anger: 31 errors (18.1%)
+  disgust: 22 errors (12.9%)
+  fear: 35 errors (20.5%)
+  joy: 4 errors (2.3%)
+  neutral: 1 errors (0.6%)
+  sadness: 35 errors (20.5%)
+  surprise: 43 errors (25.1%)
+
+Actual emotion distribution in FULL DATASET:
+  anger: 11,201 tweets (2.3%)
+  disgust: 1,083 tweets (0.2%)
+  fear: 25,066 tweets (5.1%)
+  joy: 62,250 tweets (12.7%)
+  neutral: 305,139 tweets (62.3%)
+  sadness: 10,132 tweets (2.1%)
+  surprise: 75,247 tweets (15.4%)
+
+================================================================================
+PER-EMOTION ERROR RATES (from balanced sample):
+================================================================================
+  neutral:
+    Sample: 58 tweets
+    Errors: 1
+    Error rate: 1.7%
+    Accuracy: 98.3%
+  anger:
+    Sample: 57 tweets
+    Errors: 31
+    Error rate: 54.4%
+    Accuracy: 45.6%
+  sadness:
+    Sample: 56 tweets
+    Errors: 35
+    Error rate: 62.5%
+    Accuracy: 37.5%
+  disgust:
+    Sample: 56 tweets
+    Errors: 22
+    Error rate: 39.3%
+    Accuracy: 60.7%
+  surprise:
+    Sample: 55 tweets
+    Errors: 43
+    Error rate: 78.2%
+    Accuracy: 21.8%
+  fear:
+    Sample: 55 tweets
+    Errors: 35
+    Error rate: 63.6%
+    Accuracy: 36.4%
+  joy:
+    Sample: 53 tweets
+    Errors: 4
+    Error rate: 7.5%
+    Accuracy: 92.5%
+
+================================================================================
+UNWEIGHTED METRICS (traditional, assumes balanced data):
+================================================================================
+  Total errors: 175/390
+  Error rate: 44.9%
+  Accuracy: 55.1%
+
+================================================================================
+WEIGHTED METRICS (adjusted for actual class distribution):
+================================================================================
+
+Calculation breakdown:
+  neutral:
+    Error rate: 1.7%
+    Actual proportion in dataset: 62.3%
+    Weighted contribution to error: 1.07%
+    Weighted contribution to accuracy: 61.18%
+  anger:
+    Error rate: 54.4%
+    Actual proportion in dataset: 2.3%
+    Weighted contribution to error: 1.24%
+    Weighted contribution to accuracy: 1.04%
+  sadness:
+    Error rate: 62.5%
+    Actual proportion in dataset: 2.1%
+    Weighted contribution to error: 1.29%
+    Weighted contribution to accuracy: 0.78%
+  disgust:
+    Error rate: 39.3%
+    Actual proportion in dataset: 0.2%
+    Weighted contribution to error: 0.09%
+    Weighted contribution to accuracy: 0.13%
+  surprise:
+    Error rate: 78.2%
+    Actual proportion in dataset: 15.4%
+    Weighted contribution to error: 12.00%
+    Weighted contribution to accuracy: 3.35%
+  fear:
+    Error rate: 63.6%
+    Actual proportion in dataset: 5.1%
+    Weighted contribution to error: 3.25%
+    Weighted contribution to accuracy: 1.86%
+  joy:
+    Error rate: 7.5%
+    Actual proportion in dataset: 12.7%
+    Weighted contribution to error: 0.96%
+    Weighted contribution to accuracy: 11.74%
+
+  FINAL WEIGHTED METRICS:
+    Weighted Error Rate: 19.91%
+    Weighted Accuracy: 80.09%
+
+================================================================================
+COMPARISON:
+================================================================================
+  Unweighted Accuracy: 55.1%
+  Weighted Accuracy:   80.1%
+  Difference:          25.0 percentage points
+
+  ✓ The model performs BETTER than the unweighted accuracy suggests
+    (The model is better at predicting common emotions like neutral)
+
+================================================================================
+ANALYZING: AfterChatGPT Dataset
+================================================================================
+
+================================================================================
+WEIGHTED ACCURACY ANALYSIS: AfterChatGPT (Post-Launch)
+================================================================================
+
+Sample size: 395 tweets
+Rows marked as incorrect: 129
+
+Emotion distribution in SAMPLE (balanced):
+  anger: 57 tweets (14.4%)
+  disgust: 56 tweets (14.2%)
+  fear: 56 tweets (14.2%)
+  joy: 57 tweets (14.4%)
+  neutral: 56 tweets (14.2%)
+  sadness: 57 tweets (14.4%)
+  surprise: 56 tweets (14.2%)
+
+Emotion distribution in ERRORS (after cleaning 0 invalid rows):
+  anger: 21 errors (16.3%)
+  disgust: 30 errors (23.3%)
+  fear: 6 errors (4.7%)
+  joy: 14 errors (10.9%)
+  neutral: 12 errors (9.3%)
+  sadness: 29 errors (22.5%)
+  surprise: 17 errors (13.2%)
+
+Actual emotion distribution in FULL DATASET:
+  anger: 19,440 tweets (4.0%)
+  disgust: 3,811 tweets (0.8%)
+  fear: 24,944 tweets (5.1%)
+  joy: 72,978 tweets (14.9%)
+  neutral: 256,591 tweets (52.3%)
+  sadness: 25,314 tweets (5.2%)
+  surprise: 87,379 tweets (17.8%)
+
+================================================================================
+PER-EMOTION ERROR RATES (from balanced sample):
+================================================================================
+  joy:
+    Sample: 57 tweets
+    Errors: 14
+    Error rate: 24.6%
+    Accuracy: 75.4%
+  sadness:
+    Sample: 57 tweets
+    Errors: 29
+    Error rate: 50.9%
+    Accuracy: 49.1%
+  anger:
+    Sample: 57 tweets
+    Errors: 21
+    Error rate: 36.8%
+    Accuracy: 63.2%
+  neutral:
+    Sample: 56 tweets
+    Errors: 12
+    Error rate: 21.4%
+    Accuracy: 78.6%
+  surprise:
+    Sample: 56 tweets
+    Errors: 17
+    Error rate: 30.4%
+    Accuracy: 69.6%
+  fear:
+    Sample: 56 tweets
+    Errors: 6
+    Error rate: 10.7%
+    Accuracy: 89.3%
+  disgust:
+    Sample: 56 tweets
+    Errors: 30
+    Error rate: 53.6%
+    Accuracy: 46.4%
+
+================================================================================
+UNWEIGHTED METRICS (traditional, assumes balanced data):
+================================================================================
+  Total errors: 129/395
+  Error rate: 32.7%
+  Accuracy: 67.3%
+
+================================================================================
+WEIGHTED METRICS (adjusted for actual class distribution):
+================================================================================
+
+Calculation breakdown:
+  joy:
+    Error rate: 24.6%
+    Actual proportion in dataset: 14.9%
+    Weighted contribution to error: 3.65%
+    Weighted contribution to accuracy: 11.22%
+  sadness:
+    Error rate: 50.9%
+    Actual proportion in dataset: 5.2%
+    Weighted contribution to error: 2.63%
+    Weighted contribution to accuracy: 2.54%
+  anger:
+    Error rate: 36.8%
+    Actual proportion in dataset: 4.0%
+    Weighted contribution to error: 1.46%
+    Weighted contribution to accuracy: 2.50%
+  neutral:
+    Error rate: 21.4%
+    Actual proportion in dataset: 52.3%
+    Weighted contribution to error: 11.21%
+    Weighted contribution to accuracy: 41.11%
+  surprise:
+    Error rate: 30.4%
+    Actual proportion in dataset: 17.8%
+    Weighted contribution to error: 5.41%
+    Weighted contribution to accuracy: 12.41%
+  fear:
+    Error rate: 10.7%
+    Actual proportion in dataset: 5.1%
+    Weighted contribution to error: 0.54%
+    Weighted contribution to accuracy: 4.54%
+  disgust:
+    Error rate: 53.6%
+    Actual proportion in dataset: 0.8%
+    Weighted contribution to error: 0.42%
+    Weighted contribution to accuracy: 0.36%
+
+  FINAL WEIGHTED METRICS:
+    Weighted Error Rate: 25.32%
+    Weighted Accuracy: 74.68%
+
+================================================================================
+COMPARISON:
+================================================================================
+  Unweighted Accuracy: 67.3%
+  Weighted Accuracy:   74.7%
+  Difference:          7.3 percentage points
+
+  ✓ The model performs BETTER than the unweighted accuracy suggests
+    (The model is better at predicting common emotions like neutral)
+
+================================================================================
+GENERATING REPORT
+================================================================================
+
+✅ Report saved as 'Sample_Analysis/weighted_accuracy_report.txt'
+
+================================================================================
+SUMMARY
+================================================================================
+
+Tweets AI (Pre-ChatGPT):
+  Unweighted Accuracy: 55.1%
+  Weighted Accuracy:   80.09%
+  Difference:          25.0pp
+
+AfterChatGPT (Post-Launch):
+  Unweighted Accuracy: 67.3%
+  Weighted Accuracy:   74.68%
+  Difference:          7.3pp
